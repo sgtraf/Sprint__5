@@ -7,6 +7,7 @@ class Locators:
     REG_PASSWORD = (By.XPATH, ".//input[@type='password']")
     REG_ENTER = (By.XPATH, ".//form/button")
     POPUP_INCORRECT_PASSWORD = (By.XPATH, ".//form/fieldset[3]/div/p")
+    TEXT_FORGGOT_PASS = (By.XPATH, "//p[text()='Забыли пароль?']")
 
     #надпись "Забыли пароль?" на странице входа
     ENTER_FORGET_PASSWORD = (By.XPATH, "/html/body/div/div/main/div/h2")

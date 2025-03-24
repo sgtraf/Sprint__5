@@ -1,10 +1,8 @@
 import constant_data
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import Locators
-import time
 
 class TestLoginFrom:
     def test_enter_from_main_page_login_ok(self, open_webdriver, close_webdriver):
