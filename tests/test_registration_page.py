@@ -4,6 +4,7 @@ import constant_data
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from locators import Locators
 
 class TestRegistrationPage:
 
@@ -12,7 +13,7 @@ class TestRegistrationPage:
         open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//input[@class='text input__textfield text_type_main-default']").send_keys(constant_data.NAME)
+        open_webdriver.find_element(*Locators.REG_NAME).send_keys(constant_data.NAME)
 
         # Найди поле "Email" и заполни его
         open_webdriver.find_element(By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']").send_keys(
