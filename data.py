@@ -1,0 +1,5 @@
+BASE_URL = 'https://stellarburgers.nomoreparties.site/'
+REGISTER = 'register'
+NAME = 'Миша'
+PASSWORD_7 = 'asdfghj'
+PASSWORD_5 = 'asdfg'
