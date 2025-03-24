@@ -10,3 +10,6 @@ class Locators:
 
     #надпись "Забыли пароль?" на странице входа
     ENTER_FORGET_PASSWORD = (By.XPATH, "/html/body/div/div/main/div/h2")
+
+    #Страница входа
+
