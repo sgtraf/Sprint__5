@@ -16,19 +16,19 @@ class TestRegistrationPage:
         open_webdriver.find_element(*Locators.REG_NAME).send_keys(constant_data.NAME)
 
         # Найди поле "Email" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']").send_keys(
+        open_webdriver.find_element(*Locators.REG_EMAIL).send_keys(
             helper.generate_random_email())
 
         # Найди поле "Пароль" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//input[@type='password']").send_keys(constant_data.PASSWORD_7)
+        open_webdriver.find_element(*Locators.REG_PASSWORD).send_keys(constant_data.PASSWORD_7)
 
         # Найди кнопку "Войти" и кликни по ней
-        open_webdriver.find_element(By.XPATH, ".//form/button").click()
+        open_webdriver.find_element(*Locators.REG_ENTER).click()
 
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
         WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]")))
 
-        assert open_webdriver.find_element(By.XPATH, "/html/body/div/div/main/div/h2").text == 'Вход'
+        assert open_webdriver.find_element(*Locators.ENTER_FORGET_PASSWORD).text == 'Вход'
         close_webdriver
 
     def test_input_incorrect_password_add_incorrect_password_passord_error(self, open_webdriver, close_webdriver):
@@ -36,19 +36,19 @@ class TestRegistrationPage:
         open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//input[@class='text input__textfield text_type_main-default']").send_keys(constant_data.NAME)
+        open_webdriver.find_element(*Locators.REG_NAME).send_keys(constant_data.NAME)
 
         # Найди поле "Email" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']").send_keys(
+        open_webdriver.find_element(*Locators.REG_EMAIL).send_keys(
             helper.generate_random_email())
 
         # Найди поле "Пароль" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//input[@type='password']").send_keys(constant_data.PASSWORD_5)
+        open_webdriver.find_element(*Locators.REG_PASSWORD).send_keys(constant_data.PASSWORD_5)
 
         # Найди кнопку "Войти" и кликни по ней
-        open_webdriver.find_element(By.XPATH, ".//form/button").click()
+        open_webdriver.find_element(*Locators.REG_ENTER).click()
 
         # Проверь, что появление сообщения 'Некорректный пароль'
-        assert open_webdriver.find_element(By.XPATH, ".//form/fieldset[3]/div/p").text == 'Некорректный пароль'
+        assert open_webdriver.find_element(*Locators.POPUP_INCORRECT_PASSWORD).text == 'Некорректный пароль'
 
         close_webdriver
