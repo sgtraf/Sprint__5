@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locators import Locators
 import time
 
-class TestLoginPage:
+class TestLoginFrom:
     def test_enter_from_main_page_login_ok(self, open_webdriver, close_webdriver):
         #открываем главную страницу
         open_webdriver.get(constant_data.BASE_URL)
