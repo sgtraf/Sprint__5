@@ -1,8 +1,6 @@
-import pytest
-import data
 import helper
+import constant_data
 
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -11,41 +9,40 @@ class TestRegistrationPage:
 
     def test_add_new_user_add_new_user_user_added(self, open_webdriver, close_webdriver):
 
-        open_webdriver.get(data.BASE_URL+data.REGISTER)
-
+        open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[1]/div/div/input").send_keys("rtrtrt")
+        open_webdriver.find_element(By.XPATH, ".//input[@class='text input__textfield text_type_main-default']").send_keys(constant_data.NAME)
 
         # Найди поле "Email" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[2]/div/div/input").send_keys(helper.generate_random_email())
+        open_webdriver.find_element(By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']").send_keys(
+            helper.generate_random_email())
 
         # Найди поле "Пароль" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[3]/div/div/input").send_keys("12345678")
+        open_webdriver.find_element(By.XPATH, ".//input[@type='password']").send_keys(constant_data.PASSWORD_7)
 
         # Найди кнопку "Войти" и кликни по ней
         open_webdriver.find_element(By.XPATH, ".//form/button").click()
 
-        # Добавь явное ожидание для загрузки страницы
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, ".//body/div/div/main/div/form/button")))
-        print(open_webdriver.find_element(By.CLASS_NAME, "button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa").text)
+        # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]")))
 
         assert open_webdriver.find_element(By.XPATH, "/html/body/div/div/main/div/h2").text == 'Вход'
-
         close_webdriver
 
     def test_input_incorrect_password_add_incorrect_password_passord_error(self, open_webdriver, close_webdriver):
 
-        open_webdriver.get(data.BASE_URL+data.REGISTER)
+        open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[1]/div/div/input").send_keys(data.NAME)
+        open_webdriver.find_element(By.XPATH, ".//input[@class='text input__textfield text_type_main-default']").send_keys(constant_data.NAME)
 
         # Найди поле "Email" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[2]/div/div/input").send_keys(helper.generate_random_email())
+        open_webdriver.find_element(By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']").send_keys(
+            helper.generate_random_email())
 
         # Найди поле "Пароль" и заполни его
-        open_webdriver.find_element(By.XPATH, ".//form/fieldset[3]/div/div/input").send_keys(data.PASSWORD_5)
+        open_webdriver.find_element(By.XPATH, ".//input[@type='password']").send_keys(constant_data.PASSWORD_5)
 
         # Найди кнопку "Войти" и кликни по ней
         open_webdriver.find_element(By.XPATH, ".//form/button").click()
