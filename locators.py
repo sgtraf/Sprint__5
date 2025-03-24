@@ -13,3 +13,12 @@ class Locators:
 
     #Страница входа
 
+
+    #Страница конструктора
+    SOUSE = (By.XPATH, "//span[text()='Соусы']")
+    PARENT_SOUSE = (By.XPATH, "//span[text()='Соусы']/parent::div")
+    BULKI = (By.XPATH, "//span[text()='Булки']")
+    PARENT_BULKI = (By.XPATH, "//span[text()='Булки']/parent::div")
+    NACHINKI = (By.XPATH, "//span[text()='Начинки']")
+    PARENT_NACHINKI = (By.XPATH, "//span[text()='Начинки']/parent::div")
+
