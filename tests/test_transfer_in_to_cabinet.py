@@ -7,14 +7,14 @@ from locators import Locators
 
 
 class TestTransferToCabinet:
-    def test_transder_to_cabinet_transfer_ok(self, open_webdriver, close_webdriver, enter_to_site):
+    def test_transfer_to_cabinet_transfer_ok(self, open_webdriver, close_webdriver, enter_to_site):
         #открываем главную страницу
         enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
-        open_webdriver.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click()
+        open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
         WebDriverWait(open_webdriver, 3).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='В этом разделе вы можете изменить свои персональные данные']")))
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_LK)))
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
         assert open_webdriver.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'
@@ -25,20 +25,20 @@ class TestTransferToCabinet:
         #открываем главную страницу
         enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
-        open_webdriver.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click()
+        open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
         WebDriverWait(open_webdriver, 3).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='В этом разделе вы можете изменить свои персональные данные']")))
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_LK)))
         # нажимаем на кнопку Конструктор на странице
-        open_webdriver.find_element(By.XPATH, "//p[text()='Конструктор']").click()
+        open_webdriver.find_element(*Locators.BUTTON_CONSTRUKTOR).click()
 
-        # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
+        # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Соберите бургер")
         WebDriverWait(open_webdriver, 3).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//h1[text()='Соберите бургер']")))
+                (By.XPATH, Locators.TEXT_COMPLETE_BURGER)))
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
-        assert open_webdriver.find_element(By.XPATH, "//h1[text()='Соберите бургер']").text == 'Соберите бургер'
+        assert open_webdriver.find_element(By.XPATH, Locators.TEXT_COMPLETE_BURGER).text == 'Соберите бургер'
 
         close_webdriver
 
@@ -46,19 +46,19 @@ class TestTransferToCabinet:
         #открываем главную страницу
         enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
-        open_webdriver.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click()
+        open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
         WebDriverWait(open_webdriver, 3).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='В этом разделе вы можете изменить свои персональные данные']")))
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_LK)))
         # нажимаем на кнопку Выход на странице
-        open_webdriver.find_element(By.XPATH, "//button[text()='Выход']").click()
+        open_webdriver.find_element(*Locators.BUTTON_EXIT).click()
 
-        # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
+        # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Вход")
         WebDriverWait(open_webdriver, 3).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//h2[text()='Вход']")))
+                (By.XPATH, Locators.LABEL_ENTER)))
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
-        assert open_webdriver.find_element(By.XPATH, "//h2[text()='Вход']").text == 'Вход'
+        assert open_webdriver.find_element(By.XPATH, Locators.LABEL_ENTER).text == 'Вход'
 
         close_webdriver

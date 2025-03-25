@@ -19,6 +19,7 @@ class Locators:
     TEXT_FORGGOT_PASS_LP = "//p[text()='Забыли пароль?']"
     INPUT_EMAIL = (By.XPATH, "//div[label[contains(text(),'Email')]]//input")
     INPUT_PASSW = (By.XPATH, "//div[label[contains(text(),'Пароль')]]//input")
+    LABEL_ENTER = "//h2[text()='Вход']"
 
     #Страница конструктора
     SOUSE = (By.XPATH, "//span[text()='Соусы']")
@@ -28,6 +29,15 @@ class Locators:
     NACHINKI = (By.XPATH, "//span[text()='Начинки']")
     PARENT_NACHINKI = (By.XPATH, "//span[text()='Начинки']/parent::div")
     TAKE_ORDER_TEXT = "//div/button[text()='Оформить заказ']"
+    TEXT_COMPLETE_BURGER = "//h1[text()='Соберите бургер']"
 
     #Страница восстановления пароля
     BT_ENTER_FP = (By.XPATH, "//a[text()='Войти']")
+
+    #Главная страница
+    BUTTON_LK_MP = (By.XPATH, "//p[text()='Личный Кабинет']")
+
+    #Страница личного кабинета
+    TEXT_LK = "//p[text()='В этом разделе вы можете изменить свои персональные данные']"
+    BUTTON_CONSTRUKTOR = (By.XPATH, "//p[text()='Конструктор']")
+    BUTTON_EXIT = (By.XPATH, "//button[text()='Выход']")
