@@ -24,7 +24,7 @@ class TestRegistrationPage:
         open_webdriver.find_element(*Locators.REG_ENTER).click()
 
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='Забыли пароль?']")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
 
         assert open_webdriver.find_element(*Locators.ENTER_FORGET_PASSWORD).text == 'Вход'
         close_webdriver
