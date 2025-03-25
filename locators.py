@@ -41,3 +41,4 @@ class Locators:
     TEXT_LK = "//p[text()='В этом разделе вы можете изменить свои персональные данные']"
     BUTTON_CONSTRUKTOR = (By.XPATH, "//p[text()='Конструктор']")
     BUTTON_EXIT = (By.XPATH, "//button[text()='Выход']")
+    LOGO = (By.XPATH, "//div[@class='AppHeader_header__logo__2D0X2']")
