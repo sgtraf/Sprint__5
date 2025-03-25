@@ -30,37 +30,37 @@ class TestLoginFrom:
         #открываем главную страницу
         open_webdriver.get(constant_data.BASE_URL)
         #нажимаем на кнопку Личный Кабинет на странице
-        open_webdriver.find_element(By.XPATH, "//p[text()='Личный Кабинет']").click()
+        open_webdriver.find_element(*Locators.LK_TEXT).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
         #Заполняем поля своим логином и паролем
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Email')]]//input").send_keys(constant_data.LOGIN)
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Пароль')]]//input").send_keys(constant_data.PASSWORD)
+        open_webdriver.find_element(*Locators.INPUT_EMAIL).send_keys(constant_data.LOGIN)
+        open_webdriver.find_element(*Locators.INPUT_PASSW).send_keys(constant_data.PASSWORD)
         open_webdriver.find_element(*Locators.REG_ENTER).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Оформить заказ" на кнопке)
 
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div/button[text()='Оформить заказ']")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TAKE_ORDER_TEXT)))
 
-        assert open_webdriver.find_element(By.XPATH, "//div/button[text()='Оформить заказ']").text == 'Оформить заказ'
+        assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
         close_webdriver
 
     def test_enter_throw_buton_reg_page_login_ok(self, open_webdriver, close_webdriver):
-        #открываем главную страницу
+        #открываем страницу регистрации
         open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
         #нажимаем на кнопку Войти на странице
-        open_webdriver.find_element(By.XPATH, "//a[text()='Войти']").click()
+        open_webdriver.find_element(*Locators.BT_ENTER_REG).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
         #Заполняем поля своим логином и паролем
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Email')]]//input").send_keys(constant_data.LOGIN)
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Пароль')]]//input").send_keys(constant_data.PASSWORD)
+        open_webdriver.find_element(*Locators.INPUT_EMAIL).send_keys(constant_data.LOGIN)
+        open_webdriver.find_element(*Locators.INPUT_PASSW).send_keys(constant_data.PASSWORD)
         open_webdriver.find_element(*Locators.REG_ENTER).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Оформить заказ" на кнопке)
 
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div/button[text()='Оформить заказ']")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TAKE_ORDER_TEXT)))
 
-        assert open_webdriver.find_element(By.XPATH, "//div/button[text()='Оформить заказ']").text == 'Оформить заказ'
+        assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
         close_webdriver
 
@@ -68,17 +68,17 @@ class TestLoginFrom:
         #открываем главную страницу
         open_webdriver.get(constant_data.BASE_URL+constant_data.FORGOT_PASSWORD_URL)
         #нажимаем на кнопку Войти на странице
-        open_webdriver.find_element(By.XPATH, "//a[text()='Войти']").click()
+        open_webdriver.find_element(*Locators.BT_ENTER_FP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Забыли пароль?")
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div/div/main/div/div/p[2]")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
         #Заполняем поля своим логином и паролем
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Email')]]//input").send_keys(constant_data.LOGIN)
-        open_webdriver.find_element(By.XPATH, "//div[label[contains(text(),'Пароль')]]//input").send_keys(constant_data.PASSWORD)
+        open_webdriver.find_element(*Locators.INPUT_EMAIL).send_keys(constant_data.LOGIN)
+        open_webdriver.find_element(*Locators.INPUT_PASSW).send_keys(constant_data.PASSWORD)
         open_webdriver.find_element(*Locators.REG_ENTER).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "Оформить заказ" на кнопке)
 
-        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div/button[text()='Оформить заказ']")))
+        WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TAKE_ORDER_TEXT)))
 
-        assert open_webdriver.find_element(By.XPATH, "//div/button[text()='Оформить заказ']").text == 'Оформить заказ'
+        assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
         close_webdriver

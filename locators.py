@@ -8,9 +8,11 @@ class Locators:
     REG_ENTER = (By.XPATH, ".//form/button")
     POPUP_INCORRECT_PASSWORD = (By.XPATH, ".//form/fieldset[3]/div/p")
     TEXT_FORGGOT_PASS = (By.XPATH, "//p[text()='Забыли пароль?']")
+    BT_ENTER_REG = (By.XPATH, "//a[text()='Войти']")
 
     #надпись "Забыли пароль?" на странице входа
     ENTER_FORGET_PASSWORD = (By.XPATH, "/html/body/div/div/main/div/h2")
+    LK_TEXT = (By.XPATH, "//p[text()='Личный Кабинет']")
 
     #Страница входа
     BT_ENTER = (By.CSS_SELECTOR, ".button_button__33qZ0")
@@ -27,3 +29,5 @@ class Locators:
     PARENT_NACHINKI = (By.XPATH, "//span[text()='Начинки']/parent::div")
     TAKE_ORDER_TEXT = "//div/button[text()='Оформить заказ']"
 
+    #Страница восстановления пароля
+    BT_ENTER_FP = (By.XPATH, "//a[text()='Войти']")
