@@ -1,4 +1,5 @@
 BASE_URL = 'https://stellarburgers.nomoreparties.site/'
+PROFILE_URL = 'https://stellarburgers.nomoreparties.site/account/profile'
 REGISTER = 'register'
 FORGOT_PASSWORD_URL = 'forgot-password'
 NAME = 'Миша'

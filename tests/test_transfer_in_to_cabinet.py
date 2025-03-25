@@ -1,10 +1,8 @@
 import constant_data
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import Locators
-
 
 class TestTransferToCabinet:
     def test_transfer_to_cabinet_transfer_ok(self, open_webdriver, close_webdriver, enter_to_site):
@@ -17,7 +15,7 @@ class TestTransferToCabinet:
             expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_LK)))
 
         # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
-        assert open_webdriver.current_url == 'https://stellarburgers.nomoreparties.site/account/profile'
+        assert open_webdriver.current_url == constant_data.PROFILE_URL
 
         close_webdriver
 
@@ -37,7 +35,7 @@ class TestTransferToCabinet:
             expected_conditions.visibility_of_element_located(
                 (By.XPATH, Locators.TEXT_COMPLETE_BURGER)))
 
-        # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
+        # Проверь, что на странице есть текст 'Соберите бургер'
         assert open_webdriver.find_element(By.XPATH, Locators.TEXT_COMPLETE_BURGER).text == 'Соберите бургер'
 
         close_webdriver
@@ -58,7 +56,7 @@ class TestTransferToCabinet:
             expected_conditions.visibility_of_element_located(
                 (By.XPATH, Locators.TEXT_COMPLETE_BURGER)))
 
-        # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
+        # Проверь, что на странице есть текст 'Соберите бургер'
         assert open_webdriver.find_element(By.XPATH, Locators.TEXT_COMPLETE_BURGER).text == 'Соберите бургер'
 
         close_webdriver
@@ -79,7 +77,7 @@ class TestTransferToCabinet:
             expected_conditions.visibility_of_element_located(
                 (By.XPATH, Locators.LABEL_ENTER)))
 
-        # Проверь, что текущий url равен 'https://stellarburgers.nomoreparties.site/account/profile'
+        # Проверь, что на странице есть текст 'Вход'
         assert open_webdriver.find_element(By.XPATH, Locators.LABEL_ENTER).text == 'Вход'
 
         close_webdriver
