@@ -13,7 +13,10 @@ class Locators:
     ENTER_FORGET_PASSWORD = (By.XPATH, "/html/body/div/div/main/div/h2")
 
     #Страница входа
-
+    BT_ENTER = (By.CSS_SELECTOR, ".button_button__33qZ0")
+    TEXT_FORGGOT_PASS_LP = "//p[text()='Забыли пароль?']"
+    INPUT_EMAIL = (By.XPATH, "//div[label[contains(text(),'Email')]]//input")
+    INPUT_PASSW = (By.XPATH, "//div[label[contains(text(),'Пароль')]]//input")
 
     #Страница конструктора
     SOUSE = (By.XPATH, "//span[text()='Соусы']")
@@ -22,4 +25,5 @@ class Locators:
     PARENT_BULKI = (By.XPATH, "//span[text()='Булки']/parent::div")
     NACHINKI = (By.XPATH, "//span[text()='Начинки']")
     PARENT_NACHINKI = (By.XPATH, "//span[text()='Начинки']/parent::div")
+    TAKE_ORDER_TEXT = "//div/button[text()='Оформить заказ']"
 
