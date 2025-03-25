@@ -34,3 +34,11 @@ def enter_to_site(open_webdriver):
     open_webdriver.find_element(*Locators.INPUT_PASSW).send_keys(
         constant_data.PASSWORD)
     open_webdriver.find_element(*Locators.REG_ENTER).click()
+
+@pytest.fixture
+#открывает вебдрайвер
+def open_close_webdriver():
+    wd_webdriver = webdriver.Chrome()
+    yield wd_webdriver
+    wd_webdriver.quit
+
