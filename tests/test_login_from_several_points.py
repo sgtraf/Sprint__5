@@ -26,9 +26,6 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver
-
     def test_enter_from_cabinet_login_ok(self, open_close_webdriver):
         #открываем главную страницу
         #открываем вебдрайвер через фикстуру
@@ -47,9 +44,6 @@ class TestLoginFrom:
         WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TAKE_ORDER_TEXT)))
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
-
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver
 
     def test_enter_throw_buton_reg_page_login_ok(self, open_close_webdriver):
         #открываем страницу регистрации
@@ -70,9 +64,6 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver
-
     def test_enter_throw_buton_forgot_password_login_ok(self, open_close_webdriver):
         #открываем главную страницу
         #открываем вебдрайвер через фикстуру
@@ -91,6 +82,3 @@ class TestLoginFrom:
         WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TAKE_ORDER_TEXT)))
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
-
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver

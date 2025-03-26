@@ -29,8 +29,6 @@ class TestRegistrationPage:
         WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
 
         assert open_webdriver.find_element(*Locators.ENTER_FORGET_PASSWORD).text == 'Вход'
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver
 
     def test_input_incorrect_password_add_incorrect_password_passord_error(self, open_close_webdriver):
         #открываем вебдрайвер через фикстуру
@@ -52,6 +50,3 @@ class TestRegistrationPage:
 
         # Проверь, что появление сообщения 'Некорректный пароль'
         assert open_webdriver.find_element(*Locators.POPUP_INCORRECT_PASSWORD).text == 'Некорректный пароль'
-
-        #закрываем вебдрайвер через фикстуру
-        open_close_webdriver

@@ -31,5 +31,5 @@ def enter_to_site(open_close_webdriver):
 def open_close_webdriver():
     wd_webdriver = webdriver.Chrome()
     yield wd_webdriver
-    wd_webdriver.quit
+    wd_webdriver.quit()
 
