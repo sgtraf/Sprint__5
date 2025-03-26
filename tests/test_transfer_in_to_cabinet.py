@@ -6,7 +6,7 @@ from locators import Locators
 
 class TestTransferToCabinet:
     def test_transfer_to_cabinet_transfer_ok(self, open_close_webdriver, enter_to_site):
-        #открываем главную страницу и залогиниваемя через фикстуру, присваемваем переменной ссылку на объект webdraiver
+        #открываем главную страницу и залогиниваемся через фикстуру, присваеваем переменной ссылку на объект webdraiver
         open_webdriver = enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
         open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
@@ -20,8 +20,8 @@ class TestTransferToCabinet:
         open_close_webdriver
 
     def test_transfer_to_constructor_from_lk_transfer_ok(self, open_close_webdriver, enter_to_site):
-        #открываем главную страницу
-        enter_to_site
+        #открываем главную страницу и залогиниваемся через фикстуру, присваеваем переменной ссылку на объект webdraiver
+        open_webdriver = enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
         open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
@@ -41,8 +41,8 @@ class TestTransferToCabinet:
         open_close_webdriver
 
     def test_transfer_to_constructor_from_logo_transfer_ok(self, open_close_webdriver, enter_to_site):
-        #открываем главную страницу
-        enter_to_site
+        #открываем главную страницу и залогиниваемся через фикстуру, присваеваем переменной ссылку на объект webdraiver
+        open_webdriver = enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
         open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
@@ -62,8 +62,8 @@ class TestTransferToCabinet:
         open_close_webdriver
 
     def test_logout_from_lk_logout_ok(self, open_close_webdriver, enter_to_site):
-        #открываем главную страницу
-        enter_to_site
+        #открываем главную страницу и залогиниваемся через фикстуру, присваеваем переменной ссылку на объект webdraiver
+        open_webdriver = enter_to_site
         # нажимаем на кнопку Личный Кабинет на странице
         open_webdriver.find_element(*Locators.BUTTON_LK_MP).click()
         # Добавь явное ожидание для загрузки страницы (проверяем появление надписи "В этом разделе вы можете изменить свои персональные данные")
