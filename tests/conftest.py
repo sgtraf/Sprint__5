@@ -25,6 +25,7 @@ def enter_to_site(open_close_webdriver):
         constant_data.PASSWORD)
     open_webdriver.find_element(*Locators.REG_ENTER).click()
     return open_webdriver
+
 @pytest.fixture
 #открывает и закрывает вебдрайвер
 def open_close_webdriver():

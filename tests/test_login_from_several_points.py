@@ -7,6 +7,7 @@ from locators import Locators
 class TestLoginFrom:
     def test_enter_from_main_page_login_ok(self, open_close_webdriver):
         #открываем главную страницу
+        #открываем вебдрайвер через фикстуру
         open_webdriver = open_close_webdriver
         open_webdriver.get(constant_data.BASE_URL)
         #нажимаем на кнопку Войти на главной странице
@@ -25,10 +26,12 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
 
     def test_enter_from_cabinet_login_ok(self, open_close_webdriver):
         #открываем главную страницу
+        #открываем вебдрайвер через фикстуру
         open_webdriver = open_close_webdriver
         open_webdriver.get(constant_data.BASE_URL)
         #нажимаем на кнопку Личный Кабинет на странице
@@ -45,10 +48,12 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
 
     def test_enter_throw_buton_reg_page_login_ok(self, open_close_webdriver):
         #открываем страницу регистрации
+        #открываем вебдрайвер через фикстуру
         open_webdriver = open_close_webdriver
         open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
         #нажимаем на кнопку Войти на странице
@@ -65,10 +70,12 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
 
     def test_enter_throw_buton_forgot_password_login_ok(self, open_close_webdriver):
         #открываем главную страницу
+        #открываем вебдрайвер через фикстуру
         open_webdriver = open_close_webdriver
         open_webdriver.get(constant_data.BASE_URL+constant_data.FORGOT_PASSWORD_URL)
         #нажимаем на кнопку Войти на странице
@@ -85,4 +92,5 @@ class TestLoginFrom:
 
         assert open_webdriver.find_element(By.XPATH, Locators.TAKE_ORDER_TEXT).text == 'Оформить заказ'
 
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver

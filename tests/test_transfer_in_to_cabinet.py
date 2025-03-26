@@ -37,7 +37,7 @@ class TestTransferToCabinet:
 
         # Проверь, что на странице есть текст 'Соберите бургер'
         assert open_webdriver.find_element(By.XPATH, Locators.TEXT_COMPLETE_BURGER).text == 'Соберите бургер'
-
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
 
     def test_transfer_to_constructor_from_logo_transfer_ok(self, open_close_webdriver, enter_to_site):
@@ -58,7 +58,7 @@ class TestTransferToCabinet:
 
         # Проверь, что на странице есть текст 'Соберите бургер'
         assert open_webdriver.find_element(By.XPATH, Locators.TEXT_COMPLETE_BURGER).text == 'Соберите бургер'
-
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
 
     def test_logout_from_lk_logout_ok(self, open_close_webdriver, enter_to_site):
@@ -79,5 +79,5 @@ class TestTransferToCabinet:
 
         # Проверь, что на странице есть текст 'Вход'
         assert open_webdriver.find_element(By.XPATH, Locators.LABEL_ENTER).text == 'Вход'
-
+        #закрываем вебдрайвер через фикстуру
         open_close_webdriver
