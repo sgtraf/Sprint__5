@@ -7,17 +7,6 @@ import constant_data
 from locators import Locators
 
 @pytest.fixture
-#открывает вебдрайвер
-def open_webdriver():
-    open_webdriver = webdriver.Chrome()
-    return open_webdriver
-
-@pytest.fixture
-#открывает вебдрайвер
-def close_webdriver(open_webdriver):
-    open_webdriver.quit
-
-@pytest.fixture
 #вход по существующему логину
 def enter_to_site(open_close_webdriver):
     # открываем главную страницу
