@@ -36,7 +36,7 @@ def enter_to_site(open_webdriver):
     open_webdriver.find_element(*Locators.REG_ENTER).click()
 
 @pytest.fixture
-#открывает вебдрайвер
+#открывает и закрывает вебдрайвер
 def open_close_webdriver():
     wd_webdriver = webdriver.Chrome()
     yield wd_webdriver
