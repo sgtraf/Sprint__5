@@ -7,7 +7,8 @@ from locators import Locators
 
 class TestRegistrationPage:
 
-    def test_add_new_user_add_new_user_user_added(self, open_webdriver, close_webdriver):
+    def test_add_new_user_add_new_user_user_added(self, open_close_webdriver):
+        open_webdriver = open_close_webdriver
         open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
@@ -27,11 +28,11 @@ class TestRegistrationPage:
         WebDriverWait(open_webdriver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.TEXT_FORGGOT_PASS_LP)))
 
         assert open_webdriver.find_element(*Locators.ENTER_FORGET_PASSWORD).text == 'Вход'
-        close_webdriver
+        open_close_webdriver
 
-    def test_input_incorrect_password_add_incorrect_password_passord_error(self, open_webdriver, close_webdriver):
-
-        open_webdriver.get(constant_data.BASE_URL+constant_data.REGISTER)
+    def test_input_incorrect_password_add_incorrect_password_passord_error(self, open_close_webdriver):
+        open_webdriver = open_close_webdriver
+        open_webdriver.get(constant_data.BASE_URL + constant_data.REGISTER)
 
         # Найди поле "Имя" и заполни его
         open_webdriver.find_element(*Locators.REG_NAME).send_keys(constant_data.NAME)
@@ -49,4 +50,4 @@ class TestRegistrationPage:
         # Проверь, что появление сообщения 'Некорректный пароль'
         assert open_webdriver.find_element(*Locators.POPUP_INCORRECT_PASSWORD).text == 'Некорректный пароль'
 
-        close_webdriver
+        open_close_webdriver
