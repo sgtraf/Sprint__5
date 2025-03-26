@@ -19,8 +19,9 @@ def close_webdriver(open_webdriver):
 
 @pytest.fixture
 #вход по существующему логину
-def enter_to_site(open_webdriver):
+def enter_to_site(open_close_webdriver):
     # открываем главную страницу
+    open_webdriver = open_close_webdriver
     open_webdriver.get(constant_data.BASE_URL)
     # нажимаем на кнопку Войти на главной странице
     open_webdriver.find_element(*Locators.BT_ENTER).click()
@@ -34,7 +35,7 @@ def enter_to_site(open_webdriver):
     open_webdriver.find_element(*Locators.INPUT_PASSW).send_keys(
         constant_data.PASSWORD)
     open_webdriver.find_element(*Locators.REG_ENTER).click()
-
+    return open_webdriver
 @pytest.fixture
 #открывает и закрывает вебдрайвер
 def open_close_webdriver():
