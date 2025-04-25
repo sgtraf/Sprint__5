@@ -1,0 +1,44 @@
+from selenium.webdriver.common.by import By
+
+class Locators:
+    #Страница регистрации
+    REG_NAME = (By.XPATH, ".//input[@class='text input__textfield text_type_main-default']")
+    REG_EMAIL = (By.XPATH, ".//div[@class='input pr-6 pl-6 input_type_text input_size_default']/input[@class='text input__textfield text_type_main-default']")
+    REG_PASSWORD = (By.XPATH, ".//input[@type='password']")
+    REG_ENTER = (By.XPATH, ".//form/button")
+    POPUP_INCORRECT_PASSWORD = (By.XPATH, ".//form/fieldset[3]/div/p")
+    TEXT_FORGGOT_PASS = (By.XPATH, "//p[text()='Забыли пароль?']")
+    BT_ENTER_REG = (By.XPATH, "//a[text()='Войти']")
+
+    #надпись "Забыли пароль?" на странице входа
+    ENTER_FORGET_PASSWORD = (By.XPATH, "/html/body/div/div/main/div/h2")
+    LK_TEXT = (By.XPATH, "//p[text()='Личный Кабинет']")
+
+    #Страница входа
+    BT_ENTER = (By.CSS_SELECTOR, ".button_button__33qZ0")
+    TEXT_FORGGOT_PASS_LP = "//p[text()='Забыли пароль?']"
+    INPUT_EMAIL = (By.XPATH, "//div[label[contains(text(),'Email')]]//input")
+    INPUT_PASSW = (By.XPATH, "//div[label[contains(text(),'Пароль')]]//input")
+    LABEL_ENTER = "//h2[text()='Вход']"
+
+    #Страница конструктора
+    SOUSE = (By.XPATH, "//span[text()='Соусы']")
+    PARENT_SOUSE = (By.XPATH, "//span[text()='Соусы']/parent::div")
+    BULKI = (By.XPATH, "//span[text()='Булки']")
+    PARENT_BULKI = (By.XPATH, "//span[text()='Булки']/parent::div")
+    NACHINKI = (By.XPATH, "//span[text()='Начинки']")
+    PARENT_NACHINKI = (By.XPATH, "//span[text()='Начинки']/parent::div")
+    TAKE_ORDER_TEXT = "//div/button[text()='Оформить заказ']"
+    TEXT_COMPLETE_BURGER = "//h1[text()='Соберите бургер']"
+
+    #Страница восстановления пароля
+    BT_ENTER_FP = (By.XPATH, "//a[text()='Войти']")
+
+    #Главная страница
+    BUTTON_LK_MP = (By.XPATH, "//p[text()='Личный Кабинет']")
+
+    #Страница личного кабинета
+    TEXT_LK = "//p[text()='В этом разделе вы можете изменить свои персональные данные']"
+    BUTTON_CONSTRUKTOR = (By.XPATH, "//p[text()='Конструктор']")
+    BUTTON_EXIT = (By.XPATH, "//button[text()='Выход']")
+    LOGO = (By.XPATH, "//div[@class='AppHeader_header__logo__2D0X2']")
